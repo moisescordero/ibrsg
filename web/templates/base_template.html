@@ -39,7 +39,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
         </button>
-        <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 {% for item in menu %}
                 {% if item|length > 2 %}
@@ -60,10 +60,10 @@
                 {% endif %}
                 {% endfor %}
             </ul>
-            <!-- <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form> -->
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
         </div>
     </nav>
     {% block body %}{% endblock %}

@@ -9,7 +9,11 @@ nav.navbar {
     width: -webkit-fill-available;
 }
 
-.navbar-nav .nav-item {
+nav.navbar .collapse {
+    margin-left: 50px;
+}
+
+nav.navbar .navbar-nav .nav-item {
     padding: 0px 8px;
 }
 
