@@ -23,10 +23,10 @@ nav.navbar .nav-link {
     margin-top: 0;
 }
 
-.nav-bar .nav-item .dropdown .dropdown-menu {
-    border-color: #e2e2e2e8;
+nav.navbar .nav-item.dropdown .dropdown-menu {
+    background-color: #e2e2e2f0;
 }
 
-.nav-bar .nav-item .dropdown-hover .dropdown-menu {
-    top: 34px;
+nav.navbar button.navbar-toggler {
+    color: white;
 }
