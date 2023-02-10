@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>{{web_title}}{% block head_title%}{% endblock %}</title>
+
+    <script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+
+    <link href="{% static 'css/jquery-confirm.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery-confirm.min.js' %}"></script>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <link href="{% static 'css/bootstrap-select.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/all.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo-75x75.png' %}">
+
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'img/logo-white.png' %}" width="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% for item in menu %}
+                {% if item|length > 2 %}
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" href="{{ item.0 }}" role="button" data-hover="dropdown" aria-expanded="false">
+                        {{ item.1 }}
+                    </a>
+                    <div class="dropdown-menu">
+                        {% for subitem in item.2 %}
+                        <a class="dropdown-item" href="{{ subitem.0 }}">{{ subitem.1 }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% else %}
+                <li class="nav-item {% if forloop.counter == 1 %}active{% endif %}">
+                    <a class="nav-link" href="{{ item.0 }}">{{ item.1 }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form> -->
+        </div>
+    </nav>
+    {% block body %}{% endblock %}
+</body>
+</html>
+<script>
+{% block script %}{% endblock %}
+</script>
+    

@@ -1,0 +1,32 @@
+body {
+    background-color: #fff;
+}
+
+nav.navbar {
+    background-color: rgba(0, 0, 0, 75%);
+    position: fixed;
+    z-index: 999;
+    width: -webkit-fill-available;
+}
+
+.navbar-nav .nav-item {
+    padding: 0px 8px;
+}
+
+nav.navbar .nav-link {
+    color: white;
+    font-size: small;
+}
+
+.dropdown-hover:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.nav-bar .nav-item .dropdown .dropdown-menu {
+    border-color: #e2e2e2e8;
+}
+
+.nav-bar .nav-item .dropdown-hover .dropdown-menu {
+    top: 34px;
+}
